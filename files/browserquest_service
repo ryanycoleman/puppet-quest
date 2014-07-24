@@ -31,8 +31,8 @@
 . /etc/init.d/functions
 
 NAME=browserquest
-SOURCE_DIR=/opt/browserquest/server/js
-SOURCE_FILE=main.js
+SOURCE_DIR=/opt/browserquest/server
+SOURCE_FILE=js/main.js
 
 user=ryan
 pidfile=/var/run/$NAME.pid
@@ -43,8 +43,8 @@ node=node
 forever=forever
 sed=sed
 
-export PATH=$PATH:/home/node/local/node/bin
-export NODE_PATH=$NODE_PATH:/home/node/local/node/lib/node_modules:/var/lib/node_modules
+export PATH=$PATH:/home/node/local/node/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+export NODE_PATH=$NODE_PATH:/home/node/local/node/lib/node_modules:/var/lib/node_modules:/usr/lib/node_modules:/opt/browserquest/node_modules
 
 start() {
   echo "Starting $NAME node instance: "

@@ -66,4 +66,8 @@ class quest::setup {
     require => File['/etc/rc.d/init.d/browserquest'],
   }
 
+  service { 'iptables':
+    ensure => stopped,
+  }
+
 }
