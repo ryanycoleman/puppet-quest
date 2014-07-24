@@ -7,4 +7,8 @@ class quest {
     notify    => Service['browserquest'],
   }
 
+  service { 'browserquest':
+    ensure  => running,
+  }
+
 }
