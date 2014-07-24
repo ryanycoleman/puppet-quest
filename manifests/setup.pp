@@ -7,10 +7,15 @@ class quest::setup {
 
 # Client Configuration
   require epel
-  include nodejs
+  require nodejs
 
   class { 'apache':
     default_vhost => false,
+  }
+
+  package { 'git':
+    ensure => installed,
+    before => Vcsrepo['/opt/browserquest'],
   }
 
   vcsrepo { '/opt/browserquest':
