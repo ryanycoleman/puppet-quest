@@ -26,11 +26,11 @@ class quest::setup {
     environment => 'HOME=/root'
   }
 
-  file { '/opt/browserquest/client/config/config_build.json':
-    ensure  => file,
-    mode    => 0644,
-    content => template('quest/config_build.json.erb'),
-  }
+  # file { '/opt/browserquest/client/config/config_build.json':
+  #   ensure  => file,
+  #   mode    => 0644,
+  #   content => template('quest/config_build.json.erb'),
+  # }
 
   exec { '/bin/bash build.sh':
     cwd       => '/opt/browserquest/bin',
